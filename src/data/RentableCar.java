@@ -4,7 +4,7 @@ import logic.Rentable;
 
 public class RentableCar extends Car implements Rentable {
 
-    Person person;
+    private Person person;
 
     public RentableCar(String name, int year, int seats) {
         super(name, year, seats);
@@ -12,7 +12,11 @@ public class RentableCar extends Car implements Rentable {
 
     @Override
     public void rent(String firstName, String lastName, String id) {
+        if(!isRent()){
         person = new Person(firstName,lastName,id);
+        }else{
+            System.out.println("Samochód aktualnie wypożyczony przez: " + person);
+        }
     }
 
     @Override

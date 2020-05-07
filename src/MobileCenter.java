@@ -38,6 +38,9 @@ public class MobileCenter {
             System.out.println(rC.toString());
         }
         System.out.println("---");
+        //Próba wypożyczenia aktualnie niedostępnego we flocie pojazdu
+        rentables[1].rent("Tomasz","Niewierny", "231/2020");
+        System.out.println("---");
         //Oddaj pojazdy do wypożyczalni
         for(Rentable r: rentableCars){
             r.handOver();
